@@ -35,7 +35,7 @@ def _crear_instancia_enemigo(id_enemigo: int):
 	return enemigo_creado
 
 
-def crear_enemigos():
+def crear_enemigo():
 	"""
 	Elige aleatoriamente un enemigo de la LISTA_ENEMIGOS y crea una instacia de él
 	:return: Devuelve una instancia de la clase enemigo

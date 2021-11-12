@@ -18,7 +18,7 @@ class Enemigo(Personaje):
 		Construcor de la clase Enemigo
 		:param id_enemigo: el ID del enemigo, único y definido por la propiedad id en enemigos.json
 		:param nombre_enemigo: el nombre del enemigo, definido por la propiedad nombre en enemigos.json
-		:param tipo_enemigo: el nombre del enemigo, definido por la propiedad tipo en enemigos.json
+		:param tipo_enemigo: el tipo del enemigo, definido por la propiedad tipo en enemigos.json
 		:param poder_enemigo: el poder/fuerza del enemigo, definido por la propiedad poder en enemigos.json
 		:param cantidad_dados: la cantidad de dados que tendra (POR DEFECTO USA CANTIDAD_DADOS_DEFECTO)
 		:param valor_maximo: para el rango de valores 1-valor_maximo (POR DEFECTO USA VALOR_MAXIMO_DADO)
