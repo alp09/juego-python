@@ -1,3 +1,4 @@
+from json import dumps
 from utils import generar_numero_aleatorio
 
 
@@ -20,6 +21,13 @@ class Dado:
 		:return: Devuelve el valor de la ultima tirada
 		"""
 		return self.valor
+
+	def toJson(self):
+		"""
+		Parsea a JSON el objeto
+		:return: devuelve un String del objeto en JSON
+		"""
+		return dumps(self, default=lambda o: o.__dict__, sort_keys=True, indent=4)
 
 	def lanzar_dados(self):
 		"""

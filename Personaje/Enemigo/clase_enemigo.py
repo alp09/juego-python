@@ -1,3 +1,4 @@
+from json import dumps
 from Personaje.clase_personaje import Personaje
 
 CANTIDAD_DADOS_DEFECTO = 2              # La cantidad de dados que tiene el heroe por defecto
@@ -33,3 +34,10 @@ class Enemigo(Personaje):
 		:return: Devuelve el poder del enemigo, que será restado a los puntos_vida del heroe cuando pierda
 		"""
 		return self._poder
+
+	def toJson(self):
+		"""
+		Parsea a JSON el objeto
+		:return: devuelve un String del objeto en JSON
+		"""
+		return dumps(self, default=lambda o: o.__dict__, sort_keys=True, indent=4)

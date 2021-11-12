@@ -1,6 +1,10 @@
+from json import dumps
+from Personaje.Enemigo.clase_enemigo import Enemigo
+
+
 class Sala:
 
-	def __init__(self, id_sala: int, enemigo_sala: list = None, objetos_sala: list = None):
+	def __init__(self, id_sala: int, enemigo_sala: Enemigo = None, objetos_sala: list = None):
 		self._id_sala = id_sala
 		self._esta_explorada = False
 		self._enemigo = enemigo_sala
@@ -37,6 +41,13 @@ class Sala:
 		:return: Devuelve una lista de objetos de la sala de haberlos o None si no se generaron objetos
 		"""
 		return self._objetos
+
+	def toJson(self):
+		"""
+		Parsea a JSON el objeto
+		:return: devuelve un String del objeto en JSON
+		"""
+		return dumps(self, default=lambda o: o.__dict__, indent=4)
 
 	def coger_objeto(self, indice_objeto: int):
 		"""
