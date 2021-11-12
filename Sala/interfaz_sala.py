@@ -1,10 +1,16 @@
 from Sala.clase_sala import Sala
-import Personaje.Enemigo.interfaz_enemigos as interfaz_enemigo
+import Personaje.Enemigo.interfaz_enemigo as interfaz_enemigo
 import Objeto.interfaz_objeto as interfaz_objeto
 
 
-def crear_sala(cantidad_enemigos: int, cantidad_objetos: int):
-	lista_enemigos = interfaz_enemigo.crear_enemigos(cantidad_enemigos)
-	lista_objetos = interfaz_objeto.crear_objetos(cantidad_objetos)
+def crear_sala(generar_enemigo: bool, cantidad_objetos: int):
+	"""
+	Crea una instacia de la clase Sala con el contenido indicado
+	:param generar_enemigo: un booleano que indica si la sala tendrá o no un enemigo
+	:param cantidad_objetos: la cantidad de objetos que contiene la sala
+	:return: La instancia de la sala creada
+	"""
+	lista_enemigos = interfaz_enemigo.crear_enemigo() if generar_enemigo else None
+	lista_objetos = interfaz_objeto.crear_objetos(cantidad_objetos) if cantidad_objetos > 0 else None
 	nueva_sala = Sala(lista_enemigos, lista_objetos)
 	return nueva_sala

@@ -1,20 +1,41 @@
 class Sala:
 
-	def __init__(self, enemigos_sala: list = None, objetos_sala: list = None):
+	def __init__(self, id_sala: int, enemigo_sala: list = None, objetos_sala: list = None):
+		self._id_sala = id_sala
 		self._esta_explorada = False
-		self._enemigos = [] if enemigos_sala is None else enemigos_sala
+		self._enemigo = enemigo_sala
 		self._objetos = [] if objetos_sala is None else objetos_sala
 
 	@property
+	def id(self):
+		"""
+		Getter del id de la sala
+		:return: Devuelve el id de la sala
+		"""
+		return self._id_sala
+
+	@property
 	def esta_explorada(self):
+		"""
+		Getter de la propiedad esta_explorada
+		:return: Devuelve True o False, dependiendo si la sala esta explorada o no
+		"""
 		return self._esta_explorada
 
 	@property
-	def enemigos(self):
-		return self._enemigos
+	def enemigo(self):
+		"""
+		Getter del enemigo
+		:return: Devuelve el enemigo que hay en la sala de haberlo o None
+		"""
+		return self._enemigo
 
 	@property
 	def objetos(self):
+		"""
+		Getter de los objetos de la sala
+		:return: Devuelve una lista de objetos de la sala de haberlos o None si no se generaron objetos
+		"""
 		return self._objetos
 
 	def coger_objeto(self, indice_objeto: int):
