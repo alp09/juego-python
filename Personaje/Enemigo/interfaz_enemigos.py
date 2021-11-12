@@ -10,17 +10,13 @@ LISTA_ENEMIGOS = cargar_archivo_json(ARCHIVO_ENEMIGOS_PATH)
 CANTIDAD_ENEMIGOS = len(LISTA_ENEMIGOS)
 
 
-def _elegir_enemigo(cantidad: int = 1):
+def _elegir_enemigo():
 	"""
-	Elige enemigos de la LISTA_ENEMIGOS (permite duplicados)
-	:param cantidad: la cantidad de id de enemigos que se quiere generar
-	:return: los id's de los enemigos generados
+	Elige un enemigo de la LISTA_ENEMIGOS
+	:return: el id de los enemigos generados
 	"""
-	cantidad = 1 if cantidad < 0 else min(cantidad, CANTIDAD_ENEMIGOS)
-	id_enemigos_elegidos = []
-	for i in range(cantidad):
-		id_enemigos_elegidos.append(generar_numero_aleatorio(maximo=(CANTIDAD_ENEMIGOS - 1)))
-	return id_enemigos_elegidos
+	id_enemigo_elegido = generar_numero_aleatorio(maximo=(CANTIDAD_ENEMIGOS - 1))
+	return id_enemigo_elegido
 
 
 def _crear_instancia_enemigo(id_enemigo: int):
@@ -39,15 +35,11 @@ def _crear_instancia_enemigo(id_enemigo: int):
 	return enemigo_creado
 
 
-def crear_enemigos(cantidad: int = 1):
+def crear_enemigos():
 	"""
-	Devuelve una lista que contiene instancias de la clase enemigo
-	:param cantidad: la cantidad de instancias que se quiere de la clase enemigo
-	:return: una lista con los enemigos creados
+	Elige aleatoriamente un enemigo de la LISTA_ENEMIGOS y crea una instacia de él
+	:return: Devuelve una instancia de la clase enemigo
 	"""
-	cantidad = 1 if cantidad < 0 else min(cantidad, CANTIDAD_ENEMIGOS)
-	enemigos_elegidos = _elegir_enemigo(cantidad)
-	enemigos_creados = []
-	for enemigo in enemigos_elegidos:
-		enemigos_creados.append(_crear_instancia_enemigo(enemigo))
-	return enemigos_creados
+	enemigo_elegido = _elegir_enemigo()
+	enemigo_creado = _crear_instancia_enemigo(enemigo_elegido)
+	return enemigo_creado
