@@ -1,0 +1,38 @@
+[
+  {
+    "id": 0,
+    "nombre": "ESPADA CORTA",
+    "tipo": "LUCHA",
+    "puntos": 10
+  },
+  {
+    "id": 1,
+    "nombre": "MARTILLO",
+    "tipo": "LUCHA",
+    "puntos": 15
+  },
+  {
+    "id": 2,
+    "nombre": "HACHA DE GUERRA",
+    "tipo": "LUCHA",
+    "puntos": 25
+  },
+  {
+    "id": 3,
+    "nombre": "VARITA DE JUNIOR",
+    "tipo": "MAGIA",
+    "puntos": 20
+  },
+  {
+    "id": 4,
+    "nombre": "VARITA DE SENIOR",
+    "tipo": "MAGIA",
+    "puntos": 30
+  },
+  {
+    "id": 5,
+    "nombre": "CAPA DE INVISIBILIDAD",
+    "tipo": "ASTUCIA",
+    "puntos": 40
+  }
+]
