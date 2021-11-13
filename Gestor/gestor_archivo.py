@@ -13,5 +13,10 @@ def cargar_archivo_json(path_archivo: str):
 
 
 def guardar_en_archivo_json(path_archivo: str, datos):
-	# Todo: serializar datos y guardarlos en el path_archivo
-	pass
+	"""
+	Toma los datos pasados por parametros, los parsea a JSON y posteriormente lo guarda en el archivo indicado
+	:param path_archivo: el archivo donde se quiere guardar
+	:param datos: los datos que se quieren serializar
+	"""
+	with open(path_archivo, 'w') as archivo:
+		json.dump(datos, archivo, default=lambda o: o.__dict__, indent=4)
