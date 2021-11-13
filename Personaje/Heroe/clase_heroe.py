@@ -3,9 +3,9 @@ from utils import generar_numero_aleatorio
 
 PUNTOS_VIDA_MINIMO = 0                  # El valor minimo de puntos_vida del heroe. Al llegar a 0 estaría "muerto"
 PUNTOS_VIDA_MAXIMO = 200                # El valor maximo de puntos_vida del heroe
-PUNTOS_VIDA_CREACION_MINIMO = 100       # El valor minimo de puntos_vida con los que puede iniciar el heroe
-CANTIDAD_DADOS_DEFECTO = 3              # La cantidad de dados que tiene el heroe por defecto
-VALOR_MAXIMO_DADO = 20                  # El valor maximo del dado usado por defecto
+_PUNTOS_VIDA_CREACION_MINIMO = 100		# El valor minimo de puntos_vida con los que puede iniciar el heroe
+_CANTIDAD_DADOS_DEFECTO = 3             # La cantidad de dados que tiene el heroe por defecto
+_VALOR_MAXIMO_DADO = 20                 # El valor maximo del dado usado por defecto
 
 
 class Heroe(Personaje):
@@ -14,8 +14,8 @@ class Heroe(Personaje):
 			self,
 			nombre_heroe: str,
 			habilidad_heroe: str,
-			cantidad_dados: int = CANTIDAD_DADOS_DEFECTO,
-			valor_maximo: int = VALOR_MAXIMO_DADO):
+			cantidad_dados: int = _CANTIDAD_DADOS_DEFECTO,
+			valor_maximo: int = _VALOR_MAXIMO_DADO):
 		"""
 		Constructor del personaje Heroe, controlado por el jugador
 		:param nombre_heroe: el nombre del heroe
@@ -24,7 +24,7 @@ class Heroe(Personaje):
 		:param valor_maximo: para el rango de valores 1-valor_maximo (POR DEFECTO USA VALOR_MAXIMO_DADO)
 		"""
 		super().__init__(-1, nombre_heroe, habilidad_heroe, cantidad_dados, valor_maximo)
-		self._puntos_vida = generar_numero_aleatorio(PUNTOS_VIDA_CREACION_MINIMO, PUNTOS_VIDA_MAXIMO)
+		self._puntos_vida = generar_numero_aleatorio(_PUNTOS_VIDA_CREACION_MINIMO, PUNTOS_VIDA_MAXIMO)
 
 	@Personaje.tipo.getter
 	def habilidad(self):

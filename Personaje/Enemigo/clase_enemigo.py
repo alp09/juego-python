@@ -1,8 +1,8 @@
 from json import dumps
 from Personaje.clase_personaje import Personaje
 
-CANTIDAD_DADOS_DEFECTO = 2              # La cantidad de dados que tiene el heroe por defecto
-VALOR_MAXIMO_DADO = 25                  # El valor maximo del dado usado por defecto
+_CANTIDAD_DADOS_DEFECTO = 2              # La cantidad de dados que tiene el heroe por defecto
+_VALOR_MAXIMO_DADO = 25                  # El valor maximo del dado usado por defecto
 
 
 class Enemigo(Personaje):
@@ -13,8 +13,8 @@ class Enemigo(Personaje):
 			nombre_enemigo: str,
 			tipo_enemigo: str,
 			poder_enemigo: int,
-			cantidad_dados: int = CANTIDAD_DADOS_DEFECTO,
-			valor_maximo: int = VALOR_MAXIMO_DADO):
+			cantidad_dados: int = _CANTIDAD_DADOS_DEFECTO,
+			valor_maximo: int = _VALOR_MAXIMO_DADO):
 		"""
 		Construcor de la clase Enemigo
 		:param id_enemigo: el ID del enemigo, único y definido por la propiedad id en enemigos.json

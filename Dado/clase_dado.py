@@ -20,7 +20,7 @@ class Dado:
 		Getter del valor actual del dado
 		:return: Devuelve el valor de la ultima tirada
 		"""
-		return self.valor
+		return self._valor
 
 	def toJson(self):
 		"""

@@ -11,11 +11,34 @@ class Objeto:
 		:param tipo_objeto: el tipo del objeto, definido por la propiedad tipo en objetos.json
 		:param puntos_objeto: los puntos del objeto, definido por la propiedad puntos en objetos.json
 		"""
-		self.id = id_objecto
-		self.tipo = tipo_objeto
-		self.nombre = nombre_objecto
-		self.puntos = puntos_objeto
+		self._id = id_objecto
+		self._tipo = tipo_objeto
+		self._nombre = nombre_objecto
+		self._puntos = puntos_objeto
 
+	@property
+	def tipo(self):
+		"""
+		Getter del tipo del objeto
+		:return: Devuelve el tipo del objeto
+		"""
+		return self._tipo
+
+	@property
+	def nombre(self):
+		"""
+		Getter del nombre del objeto
+		:return: Devuelve el nombre del objeto
+		"""
+		return self._nombre
+
+	@property
+	def puntos(self):
+		"""
+		Getter de los puntos del objeto
+		:return: Devuelve los puntos del objeto
+		"""
+		return self._puntos
 
 	def toJson(self):
 		"""
