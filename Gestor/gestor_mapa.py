@@ -1,42 +1,27 @@
-import utils as utils
-import Sala.interfaz_sala as interfaz_sala
+from Mapa import creador_mapa
+from Mapa.Sala import Sala
+from Mapa.Sala import interfaz_sala
 
-_MINIMO_NUMERO_SALAS = 10
-_MAXIMO_NUMERO_SALAS = 15
-_CANTIDAD_SALAS_MAPA = utils.generar_numero_aleatorio(_MINIMO_NUMERO_SALAS, _MAXIMO_NUMERO_SALAS)
-_salas_creadas = 0
-salas_mapa = []
-
-_PROBABILIDAD_PRIMER_OBJETO = 75
-_PROBABILIDAD_SEGUNDO_OBJETO = 30
-
-_PROBABILIDAD_GENERAR_MOSTRUO = 75
-_PENALIZACION_MOSTRUO_GENERADO = 10
-_salas_con_monstruo_consecutivas = 0
-_probabilidad_actual_generar_monstruo = _PROBABILIDAD_GENERAR_MOSTRUO - (_PENALIZACION_MOSTRUO_GENERADO * _salas_con_monstruo_consecutivas)
+FILAS_MATRIZ_MAPA = 7
+COLUMNAS_MATRIZ_MAPA = 15
 
 
-def _generar_sala():
+def generar_mapa():
 	"""
-	Calcula el contenido de la sala_creada y posteriormente crea una instacion con los valores adecuados
-	Una vez crea la sala, suma 1 al contador de salas creadas
-	:return: una instancia de la sala ya creada
+	Llama al creador de mapas con el tamaño definido en el archivo
+	:return: la matriz del mapa y un diccionario que contiene todas las salas
 	"""
-	global _salas_creadas
-	generar_monstruo = utils.calcular_probabilidad(_probabilidad_actual_generar_monstruo)
-	cantidad_objetos_generados = 0
-
-	if utils.calcular_probabilidad(_PROBABILIDAD_PRIMER_OBJETO):
-		cantidad_objetos_generados += 1
-		if utils.calcular_probabilidad(_PROBABILIDAD_SEGUNDO_OBJETO):
-			cantidad_objetos_generados += 1
-
-	sala_creada = interfaz_sala.crear_sala(_salas_creadas, generar_monstruo, cantidad_objetos_generados)
-	_salas_creadas += 1
-	return sala_creada
+	matriz_mapa, lista_salas = creador_mapa.generar_mapa(FILAS_MATRIZ_MAPA, COLUMNAS_MATRIZ_MAPA)
+	return matriz_mapa, lista_salas
 
 
-def crear_mapa():
-
-	for i in range(_CANTIDAD_SALAS_MAPA):
-		salas_mapa.append(_generar_sala())
+def _crear_salas_mapa(cantidad_salas: int) -> list[Sala]:
+	"""
+	Crea las salas que componen el mapa. La primera sala siempre estará vacía y la segunda siempre tendrá un enemigo
+	:return: la lista de salas creadas
+	"""
+	lista_salas_creadas = [interfaz_sala.crear_sala_vacia()]
+	for i in range(cantidad_salas - 2):
+		lista_salas_creadas.append(interfaz_sala.crear_sala_aleatoria())
+	lista_salas_creadas.append(interfaz_sala.crear_sala_final())
+	return lista_salas_creadas

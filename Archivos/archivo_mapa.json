@@ -1,0 +1,253 @@
+[
+    {
+        "_id_sala": 0,
+        "_esta_explorada": false,
+        "_enemigo": null,
+        "_objetos": null
+    },
+    {
+        "_id_sala": 1,
+        "_esta_explorada": false,
+        "_enemigo": {
+            "_id": 1,
+            "_nombre": "PITON",
+            "_tipo": "MAGIA",
+            "_dados": [
+                {
+                    "_minimo": 1,
+                    "_maximo": 25,
+                    "_valor": 11
+                },
+                {
+                    "_minimo": 1,
+                    "_maximo": 25,
+                    "_valor": 6
+                }
+            ],
+            "_poder": 15
+        },
+        "_objetos": [
+            {
+                "_id": 2,
+                "_nombre": "HACHA DE GUERRA",
+                "_tipo": "LUCHA",
+                "_puntos": 25
+            },
+            {
+                "_id": 1,
+                "_nombre": "MARTILLO",
+                "_tipo": "LUCHA",
+                "_puntos": 15
+            }
+        ]
+    },
+    {
+        "_id_sala": 2,
+        "_esta_explorada": false,
+        "_enemigo": {
+            "_id": 0,
+            "_nombre": "VIBORA",
+            "_tipo": "LUCHA",
+            "_dados": [
+                {
+                    "_minimo": 1,
+                    "_maximo": 25,
+                    "_valor": 8
+                },
+                {
+                    "_minimo": 1,
+                    "_maximo": 25,
+                    "_valor": 6
+                }
+            ],
+            "_poder": 10
+        },
+        "_objetos": [
+            {
+                "_id": 3,
+                "_nombre": "VARITA DE JUNIOR",
+                "_tipo": "MAGIA",
+                "_puntos": 20
+            },
+            {
+                "_id": 0,
+                "_nombre": "ESPADA CORTA",
+                "_tipo": "LUCHA",
+                "_puntos": 10
+            }
+        ]
+    },
+    {
+        "_id_sala": 3,
+        "_esta_explorada": false,
+        "_enemigo": {
+            "_id": 0,
+            "_nombre": "VIBORA",
+            "_tipo": "LUCHA",
+            "_dados": [
+                {
+                    "_minimo": 1,
+                    "_maximo": 25,
+                    "_valor": 16
+                },
+                {
+                    "_minimo": 1,
+                    "_maximo": 25,
+                    "_valor": 14
+                }
+            ],
+            "_poder": 10
+        },
+        "_objetos": [
+            {
+                "_id": 0,
+                "_nombre": "ESPADA CORTA",
+                "_tipo": "LUCHA",
+                "_puntos": 10
+            },
+            {
+                "_id": 3,
+                "_nombre": "VARITA DE JUNIOR",
+                "_tipo": "MAGIA",
+                "_puntos": 20
+            }
+        ]
+    },
+    {
+        "_id_sala": 4,
+        "_esta_explorada": false,
+        "_enemigo": null,
+        "_objetos": [
+            {
+                "_id": 0,
+                "_nombre": "ESPADA CORTA",
+                "_tipo": "LUCHA",
+                "_puntos": 10
+            }
+        ]
+    },
+    {
+        "_id_sala": 5,
+        "_esta_explorada": false,
+        "_enemigo": {
+            "_id": 0,
+            "_nombre": "VIBORA",
+            "_tipo": "LUCHA",
+            "_dados": [
+                {
+                    "_minimo": 1,
+                    "_maximo": 25,
+                    "_valor": 6
+                },
+                {
+                    "_minimo": 1,
+                    "_maximo": 25,
+                    "_valor": 17
+                }
+            ],
+            "_poder": 10
+        },
+        "_objetos": null
+    },
+    {
+        "_id_sala": 6,
+        "_esta_explorada": false,
+        "_enemigo": {
+            "_id": 2,
+            "_nombre": "COBRA",
+            "_tipo": "ASTUCIA",
+            "_dados": [
+                {
+                    "_minimo": 1,
+                    "_maximo": 25,
+                    "_valor": 8
+                },
+                {
+                    "_minimo": 1,
+                    "_maximo": 25,
+                    "_valor": 19
+                }
+            ],
+            "_poder": 20
+        },
+        "_objetos": null
+    },
+    {
+        "_id_sala": 7,
+        "_esta_explorada": false,
+        "_enemigo": {
+            "_id": 2,
+            "_nombre": "COBRA",
+            "_tipo": "ASTUCIA",
+            "_dados": [
+                {
+                    "_minimo": 1,
+                    "_maximo": 25,
+                    "_valor": 18
+                },
+                {
+                    "_minimo": 1,
+                    "_maximo": 25,
+                    "_valor": 24
+                }
+            ],
+            "_poder": 20
+        },
+        "_objetos": [
+            {
+                "_id": 4,
+                "_nombre": "VARITA DE SENIOR",
+                "_tipo": "MAGIA",
+                "_puntos": 30
+            },
+            {
+                "_id": 2,
+                "_nombre": "HACHA DE GUERRA",
+                "_tipo": "LUCHA",
+                "_puntos": 25
+            }
+        ]
+    },
+    {
+        "_id_sala": 8,
+        "_esta_explorada": false,
+        "_enemigo": null,
+        "_objetos": [
+            {
+                "_id": 0,
+                "_nombre": "ESPADA CORTA",
+                "_tipo": "LUCHA",
+                "_puntos": 10
+            },
+            {
+                "_id": 5,
+                "_nombre": "CAPA DE INVISIBILIDAD",
+                "_tipo": "ASTUCIA",
+                "_puntos": 40
+            }
+        ]
+    },
+    {
+        "_id_sala": "FIN",
+        "_esta_explorada": false,
+        "_enemigo": {
+            "_id": 1,
+            "_nombre": "PITON",
+            "_tipo": "MAGIA",
+            "_dados": [
+                {
+                    "_minimo": 1,
+                    "_maximo": 25,
+                    "_valor": 1
+                },
+                {
+                    "_minimo": 1,
+                    "_maximo": 25,
+                    "_valor": 15
+                }
+            ],
+            "_poder": 15
+        },
+        "_objetos": null
+    }
+]

@@ -1,10 +1,11 @@
-from utils import generar_numero_aleatorio
-from Personaje.Enemigo.clase_enemigo import Enemigo
-from Recursos.recursos import ARCHIVO_ENEMIGOS_PATH
-from Gestor.gestor_archivo import cargar_archivo_json
+from Utils import utils
+from Archivos import path
+from Gestor import gestor_archivo
+from Recursos import Tipo
+from Recursos.Personaje import Enemigo
 
-# Una lista con los enemigos cargados del archivo enemigos.json
-LISTA_ENEMIGOS = cargar_archivo_json(ARCHIVO_ENEMIGOS_PATH)
+# Una lista con los enemigos cargados del archivo archivo_enemigos.json
+LISTA_ENEMIGOS = gestor_archivo.cargar_archivo_json(path.PATH_ARCHIVO_ENEMIGOS)
 
 # La cantidad de enemigos que contiene LISTA_ENEMIGOS
 CANTIDAD_ENEMIGOS = len(LISTA_ENEMIGOS)
@@ -15,7 +16,7 @@ def _elegir_enemigo():
 	Elige un enemigo de la LISTA_ENEMIGOS
 	:return: el id de los enemigos generados
 	"""
-	id_enemigo_elegido = generar_numero_aleatorio(maximo=(CANTIDAD_ENEMIGOS - 1))
+	id_enemigo_elegido = utils.generar_numero_aleatorio(maximo=(CANTIDAD_ENEMIGOS - 1))
 	return id_enemigo_elegido
 
 
@@ -29,7 +30,7 @@ def _crear_instancia_enemigo(id_enemigo: int):
 	enemigo_creado = Enemigo(
 		id_enemigo=id_enemigo,
 		nombre_enemigo=datos_enemigo["nombre"],
-		tipo_enemigo=datos_enemigo["tipo"],
+		tipo_enemigo=Tipo.valor_de(datos_enemigo["tipo"]),
 		poder_enemigo=datos_enemigo["poder"]
 	)
 	return enemigo_creado

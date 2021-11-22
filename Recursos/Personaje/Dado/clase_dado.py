@@ -1,5 +1,5 @@
 from json import dumps
-from utils import generar_numero_aleatorio
+from Utils.utils import generar_numero_aleatorio
 
 
 class Dado:
@@ -22,13 +22,6 @@ class Dado:
 		"""
 		return self._valor
 
-	def toJson(self):
-		"""
-		Parsea a JSON el objeto
-		:return: devuelve un String del objeto en JSON
-		"""
-		return dumps(self, default=lambda o: o.__dict__, sort_keys=True, indent=4)
-
 	def lanzar_dados(self):
 		"""
 		Genera un nuevo numero aleatorio entre _minimo y _maximo
@@ -36,3 +29,10 @@ class Dado:
 		"""
 		self._valor = generar_numero_aleatorio(self._minimo, self._maximo)
 		return self._valor
+
+	def to_json(self):
+		"""
+		Parsea a JSON el objeto
+		:return: devuelve un String del objeto en JSON
+		"""
+		return dumps(self, default=lambda o: o.__dict__, sort_keys=True, indent=4)

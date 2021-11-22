@@ -3,7 +3,7 @@ import json
 
 def cargar_archivo_json(path_archivo: str):
 	"""
-	Deserialza el contenido del archivo objetos.json
+	Deserialza el contenido del archivo archivo_items.json
 	:param path_archivo: la direccion del archivo
 	:return: el resultado de la deserialización del archivo JSON
 	"""
